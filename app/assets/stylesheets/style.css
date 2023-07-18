@@ -1,0 +1,116 @@
+.alert {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+.alert-danger {
+  color: #ff0000;
+  background-color: #ffe6e6;
+  border-color: #ff0000;
+}
+
+
+.button-container {
+  display: flex;
+  gap: 10px;
+}
+
+.game-button {
+  flex: 1;
+}
+
+.roll-button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.cash-out-button {
+  background-color: #f44336; /* Red */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#app {
+  width: 100%;
+  height: 100%;
+  background: #1a2b45;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.doors {
+  display: flex;
+}
+
+.door {
+  background: #fafafa;
+  width: 100px;
+  height: 110px;
+  overflow: hidden;
+  border-radius: 5px;
+  margin: 5px;
+}
+
+.boxes {
+  transition: transform 1s ease-in-out;
+}
+
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 4rem;
+  font-weight: bolder;
+}
+
+.buttons {
+  margin: 1rem 0 2rem 0;
+  display: inherit;
+}
+
+button {
+  cursor: pointer;
+  font-size: 1.2rem;
+  margin: 0 0.2rem;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+}
+
+.info {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.roll-button:disabled {
+  background-color: gray;
+  cursor: not-allowed;
+  opacity: 0.5;
+}

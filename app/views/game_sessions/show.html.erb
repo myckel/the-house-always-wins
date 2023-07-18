@@ -1,0 +1,35 @@
+<h1>Slot Machine</h1>
+
+<p class="credits">Credits: <span id="credits-value"><%= @game_session.credits %></span></p>
+<div class="slots">
+  <div id="app"
+      data-roll-url="<%= roll_user_game_session_path(@game_session.user, @game_session, format: :json) %>"
+      data-user-id="<%= @game_session.user.id %>"
+      data-game-session-id="<%= @game_session.id %>"
+    >
+    <div class="doors">
+      <% if @roll_result.present? %>
+        <% @roll_result.each do |result| %>
+          <div class="door" data-result="<%= result %>">
+            <div class="boxes">
+              <div class="box"></div>
+            </div>
+          </div>
+        <% end %>
+      <% else %>
+        <% 3.times do %>
+          <div class="door">
+            <div class="boxes">
+              <div class="box"></div>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+
+    <div class="buttons">
+      <%= button_to 'Roll', roll_user_game_session_path(@game_session.user, @game_session, format: :json), method: :post, class: 'game-button roll-button', remote: true, disabled: false %>
+      <%= button_to 'Cash Out', cash_out_user_game_session_path(@game_session.user, @game_session), method: :post, class: 'game-button cash-out-button' %>
+    </div>
+  </div>
+</div>
